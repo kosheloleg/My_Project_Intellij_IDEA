@@ -14,6 +14,11 @@ public class MainLift {
       lift.move(7,4);
       lift.move(1,4);
 
+      lift.move(7,4);
+      lift.move(1,4);
+
+      //Тест
+
 //      lift.move(20,3);
 //      lift.move(10,6);
 
