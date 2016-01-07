@@ -21,7 +21,7 @@ public class Lift {
 
     public Lift(int liftingCapacity,int countFloorHome){
 
-        curFloor = 0;
+        curFloor = 1;
         countFloat = 0;
         countPeople = 0;
         currentCountPeople = 0;
@@ -78,10 +78,17 @@ public class Lift {
 
         }
 
-        countFloat +=curFloor+nextFloor;
+        countFloat +=Math.abs(nextFloor-curFloor);
+
+        if (curFloor==1) {
+            currentCountPeople+= countHuman;
+        } else if (nextFloor==1){
+            currentCountPeople-= countHuman;
+        }
+
+
         curFloor = nextFloor;
         countPeople+=countHuman;
-        currentCountPeople += countHuman;
 
     }
 

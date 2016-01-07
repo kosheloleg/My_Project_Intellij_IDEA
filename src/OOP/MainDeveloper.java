@@ -2,9 +2,6 @@ package OOP;
 
 import java.util.ArrayList;
 
-/**
- * Created by Oleg on 03.01.2016.
- */
 public class MainDeveloper {
 
     public static void main(String[] args){
@@ -30,7 +27,7 @@ public class MainDeveloper {
 
         for (String wtrs:weathers){
 
-            money = 0;
+            //money = 0;
             maxMoney = 0;
             for (String trnsp:transports){
 
