@@ -1,4 +1,4 @@
-package OOP;
+package HomeWork_NewYear;
 
 /**
  * Created by Oleg on 03.01.2016.

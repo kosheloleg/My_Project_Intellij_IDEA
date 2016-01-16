@@ -1,6 +1,4 @@
-package OOP;
-
-import java.util.Scanner;
+package HomeWork_NewYear;
 
 /**
  * Created by Oleg on 03.01.2016.

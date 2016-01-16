@@ -1,4 +1,4 @@
-package OOP;
+package HomeWork_NewYear;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,7 @@ public class MainDeveloper {
     public static void main(String[] args){
 
         double maxMoney;
-//        String bestWeather="";
+
         String bestTransport="";
 
         ArrayList<String>  weathers = new ArrayList<String>();
@@ -27,7 +27,6 @@ public class MainDeveloper {
 
         for (String wtrs:weathers){
 
-            //money = 0;
             maxMoney = 0;
             for (String trnsp:transports){
 
@@ -35,7 +34,6 @@ public class MainDeveloper {
                 dev.goToWork(trnsp,wtrs);
                 money = dev.calculateMoney();
 
-//                System.out.println("В "+wtrs+" погоду на "+trnsp+"  зароботок составит "+money);
 
                 if (money>maxMoney){
 
