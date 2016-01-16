@@ -3,7 +3,7 @@ package HomeWork_NewYear;
 import java.util.Scanner;
 
 /**
- * Created by Oleg on 03.01.2016.
+ * Created by Oleg on 03.01.2216.
  */
 public class MainBus {
 

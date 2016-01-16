@@ -6,7 +6,7 @@ public class mainCar {
 
         Car car = new Car("","","");
 
-        car.setMarka("Blabla");
+        car.setMarka("Bla");
 
         System.out.println(car.getContObj());
 
