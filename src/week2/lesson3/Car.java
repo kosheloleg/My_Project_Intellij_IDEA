@@ -8,6 +8,7 @@ public class Car {
     private String color;
     private String marka;
 
+
     private static int contObj;
 
     private ArrayList<String> marks = new  ArrayList<String>();
