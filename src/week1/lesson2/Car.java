@@ -34,17 +34,26 @@ public class Car {
 
     }
 
-    public void setTrack(Track track){
+    public Car(){
 
-        if (this.track==null){
+        this("","",null);
 
-            this.track = track;
-            track.setCar(this);
+    }
 
-            System.out.println("Прицеп к машине прикреплен");
+    public void setTrack(Track track) {
 
-        } else System.out.println("Прицеп нельзя прикрепить потому что уже прикреплен прицеп");
+        if (track != null) {
 
+            if (this.track == null) {
+
+                this.track = track;
+                track.setCar(this);
+
+                System.out.println("Прицеп к машине прикреплен");
+
+            } else System.out.println("Прицеп нельзя прикрепить потому что уже прикреплен прицеп");
+
+        }
     }
 
     public void unSetTrack(){
