@@ -84,7 +84,7 @@ public class Car {
 
     public String getNumber(){
 
-        return number;
+        return this.number;
 
     }
 

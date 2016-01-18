@@ -11,7 +11,6 @@ public class Track {
 
     private week1.lesson2.Car car;
 
-
     public void setCar(Car car){
 
         if (getCar()==null){
@@ -45,6 +44,11 @@ public class Track {
         return this.number ;
     }
 
+    public String getStatus(){
+
+        return this.status ;
+    }
+
     public Track(String number,String status){
 
         this.number = number;
@@ -54,16 +58,15 @@ public class Track {
 
     public Track(String number){
 
-        this(number,"");
+        this(number,"stop");
 
     }
 
     public Track(){
 
-        this("","");
+        this("","stop");
 
     }
-
 
     public void roll(){
 

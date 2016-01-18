@@ -1,6 +1,7 @@
 package week2.lesson3;
 
 import week1.lesson2.*;
+import week1.lesson2.Car;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,19 +11,13 @@ import java.util.Scanner;
  */
 public class AutoSalon {
 
-     private static ArrayList<week1.lesson2.Car> cars = new ArrayList<week1.lesson2.Car>();
-     private static ArrayList<Track> tracks = new ArrayList<Track>();
+    private ArrayList<week1.lesson2.Car> cars = new ArrayList<week1.lesson2.Car>();
+    private ArrayList<Track> tracks = new ArrayList<Track>();
 
-     private static String[] menuList = new String[12];
-
-    public AutoSalon(){
+    private String[] menuList = new String[12];
 
 
-
-    }
-
-
-    private static void fillMenuList(){
+    private void fillMenuList() {
 
         menuList[0] = "addCar";
         menuList[1] = "addTrack";
@@ -39,19 +34,22 @@ public class AutoSalon {
 
     }
 
-    private static void printMenuList(){
+    private void printMenuList() {
 
         fillMenuList();
 
-        for (int i=0;i<menuList.length;i++){
+        for (int i = 0; i < menuList.length; i++) {
 
-            System.out.println(""+i+":  "+menuList[i]);
+            System.out.println("" + i + ":  " + menuList[i]);
 
         }
 
     }
 
-    public static void startMenuList() {
+    public void start() {
+
+        String numberTrack;
+        String numberCar;
 
         printMenuList();
         System.out.println();
@@ -69,7 +67,7 @@ public class AutoSalon {
 
                     System.out.println("Введите номер авто");
 
-                    String numberCar = scan.next();
+                    numberCar = scan.next();
 
                     System.out.println("Введите цвет авто");
 
@@ -79,26 +77,108 @@ public class AutoSalon {
 
                     break;
 
+                case 2:
+
+                    System.out.println("Введите номер прицепа");
+
+                    numberTrack = scan.next();
+
+                    addTrack(new Track(numberTrack));
+
+                    break;
+
+                case 3:
+
+                    System.out.println("Введите номер авто");
+
+                    numberCar = scan.next();
+
+                    System.out.println("Введите номер прицепа");
+
+                    numberTrack = scan.next();
+
+                    break;
+
                 case 11:
                     runWhile = false;
             }
         }
     }
 
-    public static void addCar(week1.lesson2.Car car){
+    private void addCar(week1.lesson2.Car car) {
 
-        cars.add(car);
+        if (!isCarInAutosalon(car.getNumber())) {
 
-        System.out.println("Добавлен новый автомобиль с номером "+car.getNumber()+"  и цветом "+car.getColor());
+            cars.add(car);
+
+            System.out.println("Добавлен новый автомобиль с номером " + car.getNumber() + "  и цветом " + car.getColor());
+        } else System.out.println("Авто с таким номером уже есть");
+    }
+
+    private boolean isTrackInAutosalon(String numberTrack) {
+
+        return getCar(numberTrack)!=null;
+
+    }
+
+    private boolean isCarInAutosalon(String numberCar) {
+
+        return getCar(numberCar)!=null;
+
+    }
+
+    private week1.lesson2.Car getCar(String numberCar){
+
+        for (week1.lesson2.Car c:cars){
+
+            if (c.getNumber().equals(numberCar)){
+
+                return c;
+
+            }
+
+
+        }
+
+        return null;
+    }
+
+    private Track getTrack(String numberTrack){
+
+        for (Track t:tracks){
+
+            if (t.getNumber().equals(numberTrack)){
+
+                return t;
+
+            }
+
+
+        }
+
+        return null;
+    }
+
+    private void addTrack(Track track) {
+
+        if (!isTrackInAutosalon(track.getNumber())) {
+
+            tracks.add(track);
+
+            System.out.println("Добавлен новый прицеп с номером " + track.getNumber() + "  и состояние " + track.getStatus());
+        } else System.out.println("Прицеп с таким номером уже есть");
+
+    }
+
+    private void connectTrackToCar(String carNumber,String trackNumber){
+
+        week1.lesson2.Car car = getCar(carNumber);
+        Track track  = getTrack(trackNumber);
 
 
     }
 
-    public static void addTrack(Track track){
 
-        tracks.add(track);
-
-    }
 
 
 }

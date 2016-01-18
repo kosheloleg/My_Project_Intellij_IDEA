@@ -9,10 +9,7 @@ public class MainAutosalon {
 
     public static void main(String[] args){
 
-        Scanner scan = new Scanner(System.in);
-        boolean runWhile = true;
-
-        AutoSalon.startMenuList();
-
+        AutoSalon autoSalon = new AutoSalon();
+        autoSalon.start();
     }
 }
