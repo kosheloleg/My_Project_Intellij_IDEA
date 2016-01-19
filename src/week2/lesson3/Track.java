@@ -99,4 +99,12 @@ public class Track {
 
     }
 
+    @Override
+    public String toString(){
+
+       return "Номер прицепа: "+number+"    статус: "+status;
+
+    }
+
+
 }

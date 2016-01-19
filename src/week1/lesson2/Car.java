@@ -56,6 +56,12 @@ public class Car {
         }
     }
 
+    public Track getTrack(){
+
+        return this.track;
+
+    }
+
     public void unSetTrack(){
 
         if (this.track != null){
@@ -126,6 +132,11 @@ public class Car {
         } else
         {System.out.println("Машина с номером "+number+" не может стартонуть потому что она уже в движении");}
 
+        if (this.track!=null) {
+
+
+
+        }
 
 
 

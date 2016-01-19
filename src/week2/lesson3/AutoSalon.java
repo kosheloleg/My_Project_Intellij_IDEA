@@ -11,8 +11,8 @@ import java.util.Scanner;
  */
 public class AutoSalon {
 
-    private ArrayList<week1.lesson2.Car> cars = new ArrayList<week1.lesson2.Car>();
-    private ArrayList<Track> tracks = new ArrayList<Track>();
+    private static ArrayList<week1.lesson2.Car> cars = new ArrayList<week1.lesson2.Car>();
+    private static ArrayList<Track> tracks = new ArrayList<Track>();
 
     private String[] menuList = new String[12];
 
@@ -62,6 +62,13 @@ public class AutoSalon {
         while (runWhile) {
 
             int k = scan.nextInt();
+
+            if (k>12 &k<=0){
+
+                System.out.println("Такой номер не походит");
+                return;
+            }
+
             switch (k) {
                 case 1:
 
@@ -97,9 +104,79 @@ public class AutoSalon {
 
                     numberTrack = scan.next();
 
+                    connectTrackToCar(numberCar,numberTrack);
+
+                    break;
+
+                case 4:
+
+                    System.out.println("Введите номер авто");
+
+                    numberCar = scan.next();
+
+                    disconnectTrackToCar(numberCar);
+
+                    break;
+
+                case 5:
+
+                    showCarList();
+
+                    break;
+
+                case 6:
+
+                    showTrackList();
+
+                    break;
+
+
+                case 7:
+
+                    showCarsWithTrack();
+
+                    break;
+
+
+
+                case 8:
+
+                    System.out.println("Введите номер авто");
+
+                    numberCar = scan.next();
+
+                    carStart(numberCar);
+
+                    break;
+
+                case 9:
+
+                    System.out.println("Введите номер авто");
+
+                    numberCar = scan.next();
+
+                    carMove(numberCar);
+
+                    break;
+
+                case 10:
+
+                    System.out.println("Введите номер авто");
+
+                    numberCar = scan.next();
+
+                    carStop(numberCar);
+
                     break;
 
                 case 11:
+
+                    showCarsAndTrack();
+
+                    break;
+
+
+                case 12:
                     runWhile = false;
             }
         }
@@ -174,6 +251,129 @@ public class AutoSalon {
 
         week1.lesson2.Car car = getCar(carNumber);
         Track track  = getTrack(trackNumber);
+
+        if (car != null){
+
+            if (track!=null){
+
+                car.setTrack(track);
+
+            } else System.out.println("Прицепа с таким номером нет");
+
+        } else System.out.println("Автомобиля с таким номером нет");
+
+
+    }
+
+    private void disconnectTrackToCar(String numberCar){
+
+        week1.lesson2.Car car = getCar(numberCar);
+
+        car.unSetTrack();
+
+    }
+
+    public static void showCarList(){
+
+        for (week1.lesson2.Car car:cars){
+
+            System.out.println(car);
+
+        }
+
+    }
+
+    public static void showTrackList(){
+
+        for (Track t: tracks){
+
+            System.out.println(t);
+
+        }
+
+    }
+
+    public static void showCarsWithTrack(){
+
+        for (week1.lesson2.Car car:cars){
+
+            if (car.getTrack()!=null){
+
+                System.out.println(car);
+
+            }
+
+        }
+
+
+    }
+
+    public void carStart(String numberCar){
+
+        week1.lesson2.Car car = getCar(numberCar);
+
+        if (car!=null){
+
+            car.start();
+
+            System.out.println("Машина завелась");
+
+        } else System.out.println("Машина с таким номером не найжена");
+
+
+
+
+    }
+
+    public void carMove(String numberCar){
+
+        week1.lesson2.Car car = getCar(numberCar);
+
+        if (car!=null){
+
+            car.move(30);
+
+            System.out.println("Машина поехала");
+
+            Track track = car.getTrack();
+
+            if (track!=null){
+
+                track.roll();
+                System.out.println("Прицеп поехал");
+            }
+
+        } else System.out.println("Машина с таким номером не найжена");
+
+    }
+
+    public void carStop(String numberCar) {
+
+        week1.lesson2.Car car = getCar(numberCar);
+
+        if (car != null) {
+
+            car.stop();
+
+            System.out.println("Машина остановилась");
+
+            Track track = car.getTrack();
+
+            if (track != null) {
+
+                track.stop();
+
+                System.out.println("Прицеп остановился");
+
+            }
+            System.out.println("Прицепа нет");
+        } else System.out.println("Машина с таким номером не найжена");
+
+    }
+
+    public void showCarsAndTrack(){
+
+
 
 
     }
