@@ -138,3 +138,20 @@ Developer
  Задания *: связать методы класса Car (move, stop) с методами класса Track(roll,stop).
  При попытке вызвать метод move для авто, вызвается метод roll для прицепа.
  При попытке вызвать метод stop для авто, вызвается метод stop для прицепа.
+
+
+ Task. Написать класс BlockConditioners, Conditioner и MainConditioners.
+ Класс BlockConditioners-это набор кондишнов.
+ В блоке управления 10 кондиционеров.
+ Делегирование.
+ Класс Conditioner: int temperature, setTemperature(int k), turnOn(),turnOff(), getTemperature(),?? getTurn()
+ Класс MainConditioner: консольное меню, где вызываются только методы объекта  BlockConditioners.
+
+ В MainConditioner создание объекта BlockConditioners и вызов мтода этого объекта.
+
+ Консольное меню:
+ 1. Отобразить состояние всех кондиционеров
+ 2. Включить кондиционер с индексом...
+ 3. Выключить кондиционер с индексом...
+ 4. Установить температуру для кондиционера с индексом...
+ 5. Выход.
