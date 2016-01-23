@@ -127,7 +127,7 @@ public class Car {
         if (speed==0) {
 
             if (working) {System.out.println("Машина уже заведена");}
-            else working = true; System.out.println("Машина завелась!");
+            else {working = true; System.out.println("Машина завелась!");}
 
         } else
         {System.out.println("Машина с номером "+number+" не может стартонуть потому что она уже в движении");}
@@ -167,6 +167,11 @@ public class Car {
 
     }
 
+    @Override
+    public String toString(){
 
+       return "Машина номер "+this.number+ "  цвет "+this.color+" ее скорость "+this.speed+"  заведена "+working;
+
+    }
 
 }

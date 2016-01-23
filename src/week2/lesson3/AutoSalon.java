@@ -40,7 +40,7 @@ public class AutoSalon {
 
         for (int i = 0; i < menuList.length; i++) {
 
-            System.out.println("" + i + ":  " + menuList[i]);
+            System.out.println("" + (i+1) + ":  " + menuList[i]);
 
         }
 
@@ -76,11 +76,7 @@ public class AutoSalon {
 
                     numberCar = scan.next();
 
-                    System.out.println("Введите цвет авто");
-
-                    String colorCar = scan.next();
-
-                    addCar(new week1.lesson2.Car(numberCar, colorCar));
+                    addCar(new week1.lesson2.Car(numberCar));
 
                     break;
 
@@ -194,7 +190,7 @@ public class AutoSalon {
 
     private boolean isTrackInAutosalon(String numberTrack) {
 
-        return getCar(numberTrack)!=null;
+        return getTrack(numberTrack)!=null;
 
     }
 
@@ -316,8 +312,6 @@ public class AutoSalon {
 
             car.start();
 
-            System.out.println("Машина завелась");
-
         } else System.out.println("Машина с таким номером не найжена");
 
 
@@ -333,14 +327,13 @@ public class AutoSalon {
 
             car.move(30);
 
-            System.out.println("Машина поехала");
 
             Track track = car.getTrack();
 
             if (track!=null){
 
                 track.roll();
-                System.out.println("Прицеп поехал");
+
             }
 
         } else System.out.println("Машина с таким номером не найжена");
@@ -355,23 +348,40 @@ public class AutoSalon {
 
             car.stop();
 
-            System.out.println("Машина остановилась");
-
             Track track = car.getTrack();
 
             if (track != null) {
 
                 track.stop();
 
-                System.out.println("Прицеп остановился");
+            } else { System.out.println("Прицепа нет");}
 
-            }
-            System.out.println("Прицепа нет");
         } else System.out.println("Машина с таким номером не найжена");
 
     }
 
     public void showCarsAndTrack(){
+
+        System.out.println("Все автомобили в автосалоне:");
+
+        for (Car c:cars){
+
+            System.out.println(c);
+
+        }
+
+        System.out.println("");
+
+        System.out.println("Все прицепы в автосалоне прикрепленные к машине:");
+
+        for (Track t:tracks){
+
+            if (t.getCar()!=null){
+
+            System.out.println(t);
+            }
+
+        }
 
 
 
