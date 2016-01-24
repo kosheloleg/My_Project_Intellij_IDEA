@@ -5,15 +5,22 @@ package week3.lesson6;
  */
 public class Samsung extends Phone {
 
-    public void printModel(){
 
-        System.out.println("Я самсунг");
+    public Samsung(String number){
+
+        super(number);
+    }
+
+    public String getModel(){
+
+       return "Я самсунг ";
 
     }
 
-    public Samsung(String number,boolean camera,int sideSize){
+    public void printModel(){
 
-        super(number,camera,sideSize);
+        System.out.println(getModel());
+
     }
 
 

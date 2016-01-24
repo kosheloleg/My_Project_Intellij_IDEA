@@ -1,8 +1,6 @@
 package week3.lesson6;
 
-/**
- * Created by Koshel on 24.01.2016.
- */
+
 public abstract class Phone {
 
     String number;
@@ -17,14 +15,13 @@ public abstract class Phone {
 
     }
 
-    public Phone(String number,boolean camera,int sideSize){
+    public Phone(String number){
 
         this.number = number;
-        this.camera = camera;
-        this.sideSize = sideSize;
+
 
     }
 
-    void printModel(){}
+    abstract void printModel();
 
 }

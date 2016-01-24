@@ -2,7 +2,8 @@ package week3.lesson6;
 
 public abstract class IPhone extends Phone {
 
-    int appleId;
+    private int appleId;
+
 
     void printAppleId(){
 
@@ -11,9 +12,9 @@ public abstract class IPhone extends Phone {
     }
 
 
-    public IPhone(String number,boolean camera, int sideSize,int appleID){
+    public IPhone(String number,int appleID){
 
-        super(number,camera,sideSize);
+        super(number);
         this.appleId = appleID;
 
     }

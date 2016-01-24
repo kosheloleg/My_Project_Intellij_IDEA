@@ -13,9 +13,9 @@ public class IPhone5 extends IPhone {
 
     }
 
-    public IPhone5(String number, boolean camera, int sideSize, int appleID){
+    public IPhone5(String number, int appleID){
 
-        super(number,camera,sideSize,appleID);
+        super(number,appleID);
 
     }
 

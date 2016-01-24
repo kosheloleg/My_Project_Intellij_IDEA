@@ -12,9 +12,9 @@ public class Nokia extends Phone {
     }
 
 
-    public Nokia(String number,boolean camera,int sideSize){
+    public Nokia(String number){
 
-        super(number,camera,sideSize);
+        super(number);
     }
 
 }
