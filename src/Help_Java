@@ -19,5 +19,26 @@ public class СonsoleMenuExmple {
  }
 }
 
+/////////////////////////////////////////////////
+
 Базовый, супер или родитель
 Наследник, потомок произволный клас
+
+
+
+instanceof - определить
+
+///////////////////////////////////////////////////////////////////////
+Figura[] f = new Figura[10];
+
+Figura b = f[ i ];
+
+if( b instanceof Circle) { ... }
+
+b = new Rectangle();
+if( b instanceof Rectangle) { ... } // true
+if( b instanceof Square) { ... } // false
+
+b=new Square()
+if( b instanceof Rectangle) { ... } // true
+if( b instanceof Square) { ... } // true
