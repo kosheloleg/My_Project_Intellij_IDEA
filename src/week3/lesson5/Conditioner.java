@@ -18,12 +18,20 @@ public class Conditioner {
 
         setIndex(index);
 
+
     }
 
-    public Conditioner(){
+    public void turn(boolean isWorking){
 
-        this(0);
+        this.isWorking = isWorking;
 
+    }
+
+
+
+    public int getIndex(){
+
+        return this.index;
     }
 
 
@@ -36,13 +44,13 @@ public class Conditioner {
 
     public void turnOn(){
 
-        isWorking = true;
+        turn(true);
 
     }
 
-    public void turnOf(){
+    public void turnOff(){
 
-        isWorking = false;
+        turn(false);
 
     }
 
