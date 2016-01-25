@@ -1,15 +1,14 @@
 package week3.HomeWork;
 
-/**
- * Created by Oleg on 24.01.2016.
- */
+
 public abstract class Animal {
 
-    String name;
+    private String name;
 
     abstract void say();
+    abstract void riseHair();
+    abstract void yellIfNotGorged();
 
-    abstract void eat();
 
     public Animal(String name){
 
@@ -20,6 +19,12 @@ public abstract class Animal {
     public void printName(){
 
         System.out.println("My name "+name);
+
+    }
+
+    public void eat(){
+
+        System.out.println("Я ем");
 
     }
 
