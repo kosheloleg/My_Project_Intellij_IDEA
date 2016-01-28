@@ -16,6 +16,7 @@ public class Product {
 
     }
 
+
     public Product(String barcode,double price){
 
         this(barcode,price,0);
