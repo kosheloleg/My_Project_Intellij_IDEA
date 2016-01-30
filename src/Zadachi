@@ -209,3 +209,48 @@ Developer
   - Взлетать (это возможно если в обоих крыльях достаточно топлива для взлета, которое тратится при взлете, метод void takeoff())
   - Задавать маршрут (маршрут состоит из последовательности координат, метод void selectRoute(int[][] coordinates))
   - Вывести на экран маршрут, метод void printRoute()
+
+  Задача:
+  public interface Humanable {
+   public void takeGlass(AbstractGlass glass);
+   public void putGlass();
+   public void pourWaterOnTable(AbstractTable table);
+   public void fillGlass();
+   public void printAboutMe();
+  }
+  public interface Glassable {
+   public void pourFromMe();
+  }
+  public interface Tablable {
+   public boolean isDry();
+  }
+
+  Интерфейсы: Humanable, Tablable, Glassable,
+  Абстрактные классы: AbstractGlass, AbstractHuman, AbstractTable
+  Классы: HumanWoman, HumanMan, GlassCircle, GlassSquare, Table, MainClass
+
+  Когда выливается вода из стакана-стакан кричит я стакан круглый(или квадратный) выливаюсь.
+
+  Задание в Main:
+  1. Создать массив из 4-х человек разного пола(пол определяется с помощью Math.random)
+  2. Создать список из 10 столов.(пронумеровать столы, автоматически increment)
+  3. Каждый на угад берет стаканы.
+  4. Провести перекличку( для каждого вызвать метод printAboutMe(Я м/ж и (если есть) у меня стакан кр/кв))
+  5. Для каждого человека с консоли определяем индекс стола, человек выливает воду на стол(если у него есть стакан).
+  6. Провести опрос столов на предмет сухости (вызов методов isDry).
+
+
+  Task1. Запросить с консоли путь папки и расширение. Вывести на экран все файлы с раширением из этой папки(без иерархии)..
+
+  Task2. Запросить путь на папку с консоли, получить список всех папок заданной папки с учетом иерархии.
+  Например, поиск в папке "book" даст 5 элементов:
+  -book
+  --directory1
+  ----file1
+  ----file2
+  --directory2
+  ----directory3
+  ------directory4
+  --------directory5
+  ----------file3
+ArrayList<File>

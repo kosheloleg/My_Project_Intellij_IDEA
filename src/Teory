@@ -32,3 +32,22 @@
 Поля в интерфейсах по умолчанию static final
 Интерфейсы не могут иметь констукторов
 
+Файловая система:
+
+f.exist();
+f.isFile();
+f.isDirectory();
+
+public class FileTest {
+ public static void main(String[] args) throws IOException {
+  File f = new File("d://book/1.txt");
+  File[] files = f.listFiles();// files.length!!! error
+  System.out.println("files="+files);
+
+  System.out.println(Arrays.toString(files));
+  System.out.println(f.getCanonicalPath());
+  System.out.println(File.separatorChar);
+  if(f.isDirectory()) System.out.println("Это директория");
+  if(!f.exists()) f.createNewFile();
+ }
+}
