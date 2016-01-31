@@ -51,3 +51,21 @@ public class FileTest {
   if(!f.exists()) f.createNewFile();
  }
 }
+//////////////////////////////////////////////////////////////////////////
+Потоки бывают символьные, байтовые
+FileWriter fw = new FileWriter("file1.txt");
+fw.write("");
+fw.flush() -  збрасывает из буфера в файл и гарантировано очищает буфер.
+close - содержит flush
+
+FileReader fr = new FileReader("file1.txt");
+Scanner scan = new Scanner(fr);
+
+scan.hasNextLine();
+scan.nextLine();
+
+scan.close();
+
+while(scan.hasNext()) scan.next();
+\n - переход на следующую строку
+\t - табуляция
