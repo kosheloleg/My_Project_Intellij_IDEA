@@ -1,11 +1,13 @@
 package week4.lesson7;
 
 
-public class AbstractTable implements Tablable {
+public abstract class AbstractTable implements Tablable {
 
     boolean isDry;
 
-    private static int number;
+    private int number;
+
+    private static int lastnumber;
 
     public boolean isDry(){
 
@@ -14,7 +16,21 @@ public class AbstractTable implements Tablable {
 
     public AbstractTable(){
 
-        ++number;
+       setNumber();
+
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber() {
+        number = lastnumber++;
+    }
+
+    public void printAboutMe(){
+
+        System.out.println("Я стол №"+getNumber()+ (isDry()? " мокрый":" сухой"));
 
     }
 

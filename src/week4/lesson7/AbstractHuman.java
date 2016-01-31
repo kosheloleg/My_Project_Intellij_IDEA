@@ -1,15 +1,14 @@
 package week4.lesson7;
 
 
-public class AbstractHuman implements Humanable {
+public abstract class AbstractHuman implements Humanable {
 
     private AbstractGlass glass;
 
-    private AbstractTable table;
+    //private AbstractTable table;
 
     public void takeGlass(AbstractGlass glass){
 
-        System.out.println("Я "+this.toString()+" беру стакан "+glass.toString());
         this.glass = glass;
     }
     public void putGlass(){
@@ -19,9 +18,14 @@ public class AbstractHuman implements Humanable {
     }
     public void pourWaterOnTable(AbstractTable table){
 
-        System.out.println("Выливается вода из стакана на стол");
+        if (glass!=null){
 
-        table.isDry = true;
+        System.out.println("Выливается вода из стакана "+this.glass.getInfoForMe()+" на стол №"+table.getNumber());
+
+        table.isDry = true;}
+
+        else System.out.println("Не стакана в руках");
+
 
     }
     public void fillGlass(){
@@ -30,8 +34,15 @@ public class AbstractHuman implements Humanable {
 
     }
 
-     public void printAboutMe(){
-
+    public AbstractGlass getGlass() {
+        return glass;
     }
+
+    public void setGlass(AbstractGlass glass) {
+        this.glass = glass;
+    }
+
+
+    abstract public void printAboutMe();
 
 }
