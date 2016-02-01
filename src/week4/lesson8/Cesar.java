@@ -2,12 +2,10 @@ package week4.lesson8;
 
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Task1 {
+public class Cesar {
 
     public static void main(String[] args) throws Exception {
 
@@ -35,6 +33,10 @@ public class Task1 {
                 if (ch!=' ')
                 stroka += (char)((int)ch+3);
 
+            }
+
+            if (sc.hasNextLine()){
+                stroka+="\n";
             }
 
 

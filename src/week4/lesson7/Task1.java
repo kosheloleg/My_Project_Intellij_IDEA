@@ -21,12 +21,14 @@ public class Task1 {
 
             File[] files = f.listFiles();
 
+
             for (File fl:files){
 
-//                if (fl.toString().("ef")!=-1){
-//
-//
-//                }
+                if (fl.getName().indexOf("."+ext)!=-1){
+
+                    System.out.println(fl.getName());
+
+                }
 
             }
 
