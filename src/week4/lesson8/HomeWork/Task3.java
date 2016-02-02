@@ -21,12 +21,25 @@ public class Task3 {
 
         String[][] arr = getVariablesAndValue("Task3");
 
+        for (int i = 0;i<arr.length;i++){
+
+            for (int j=0;j<arr[i].length;j++){
+
+                System.out.println(arr[i][j]);
+
+            }
+
+        }
+
+
     }
 
     public static String[][] getVariablesAndValue(String fileName) throws Exception{
 
-        String[][] strArr = new String[1][1];
+        String[][] strArr = new String[0][0];
 
+        int indexBegin;
+        int indexEnd;
 
         FileReader fr = new FileReader(fileName);
 
@@ -38,14 +51,30 @@ public class Task3 {
 
             s = sc.nextLine();
 
+            s = s.substring(1,s.length());
+
             String[] parts = s.split(";");
+            strArr = new String[2][parts.length];
+
 
 
             for (int i=0;i<parts.length;i++){
 
-                System.out.println(parts[i]);
 
+                if (!parts[i].equals("")) {
 
+                    indexEnd = parts[i].indexOf("=");
+                    strArr[0][i] = parts[i].substring(0, indexEnd);
+
+                    //System.out.println(strArr[0][i]);
+
+                    indexBegin = parts[i].indexOf("=[");
+                    indexEnd = parts[i].indexOf("]");
+
+                    strArr[1][i] = parts[i].substring(indexBegin+2,indexEnd);
+
+                    //System.out.println(strArr[1][i]);
+                }
 
             }
 
