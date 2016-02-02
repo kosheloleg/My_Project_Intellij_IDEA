@@ -28,7 +28,11 @@ public class Task4 {
 
         for (File fff:files){
 
-            System.out.println(fff.getAbsolutePath());
+            System.out.println(fff.getCanonicalFile());
+
+            System.out.println();
+
+            System.out.println(fff.getCanonicalPath());
 
         }
 
