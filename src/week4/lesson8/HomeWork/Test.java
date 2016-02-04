@@ -9,16 +9,20 @@ public class Test {
         getListFiles("C:\\1");
 
         for (File fil : listWithFileNames) {
-            System.out.println(fil.getName());
+            System.out.println(fil.getAbsolutePath());
         }
     }
 
     public static void getListFiles(String str) {
         File f = new File(str);
-        for (File s : f.listFiles()) {
-            if (s.isFile()) {
+
+        File[] files = f.listFiles();
+
+        for (File s : files) {
+            //if (s.isFile()) {
                 listWithFileNames.add(s);
-            } else if (s.isDirectory()) {
+            //} else
+        if (s.isDirectory()) {
                 getListFiles(s.getAbsolutePath());
             }
         }
