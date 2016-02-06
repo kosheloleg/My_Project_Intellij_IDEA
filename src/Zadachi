@@ -327,3 +327,39 @@ Task2. Шифр Цезаря с ключом например 3.
   long time2 = System.nanoTime();
 
   long score = time2 - time1;
+
+
+
+  Task1. Создать класс Notepad (записная книжка) с внутренним клас-
+  сом или классами, с помощью объектов которого могут хра-
+  ниться несколько записей на одну дату.
+  Notepad ( ArrayList<Message> messages; )
+  Message( GregorianCalendar date; ArrayList<String> list; )
+
+  public class NotepadMain {
+
+   public static void main(String[] args) {
+    Notepad n = new Notepad();
+    GregorianCalendar date1 = new GregorianCalendar(2015,01,20);
+    GregorianCalendar date2 = new GregorianCalendar(2015,01,21);
+    n.add(date1, "Первая строка");
+    n.add(date1, "Вторая строка");
+    n.add(date2, "Третья строка");
+    n.printByDate(date1);
+   }
+  }
+
+
+  Задача 3.
+  Написать класс Светофор TrafficLight с перечислением EnumTrafColor.
+   TrafficLight и EnumTrafColor реализуют отношения делегирования.
+   В классе MainTrafficLight создаем объект класса Светофор и с помощью цикла for (например 10 раз) вызываем метод
+   переключения цвета в светофоре.
+   Между каждым перечислением(в main) вставляем код замирания на секунду(пол секунды)
+    try {
+     Thread.sleep(500);
+    } catch (Exception e) {
+     e.printStackTrace();
+    }
+   Подумать о том, чтобы в перечислении был метод например getNextColor, который переключает светофор на следующий цвет.
+   Последовательность цветов у светофора:ж,з,ж,к,ж,з,ж,к,ж,з,ж,к

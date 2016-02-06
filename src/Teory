@@ -69,3 +69,144 @@ scan.close();
 while(scan.hasNext()) scan.next();
 \n - переход на следующую строку
 \t - табуляция
+
+////////////////////////Иерархия папок
+ArrayList<File> files =
+files.add(dir); \\new File
+
+for (int i=0; files.size;i++){
+
+File[] arr = files.get(i).listFiles;
+
+for (int j=0;j<arr...;j++){
+
+if (isDirectiry)
+
+files.add(arr[j])
+
+}
+}
+}
+
+Вложенные внетренние класы это класы обьявленные внутри другого класса
+
+1. Вложенные(Nested Classes) static!!!
+2. Внутренние (Inner Clases)
+ - Обычные (Inner)
+ - Локальные (Local)  это обьявленные внутри метода, имеет доступ только к локальным переменным только final
+ - Анонимные (безимянные) (Anonymous)
+
+
+ 1. Вложенные (Nested Classes) static!!!!
+ 2. Внутренние (Inner Classes):
+     - обычные    (Inner)
+     - локальные  (Local)
+     - анонимные (безымянные) (Anonymous)
+
+
+ /////////////////////////////////////////////////////////
+ public class MyClass {
+  static int sStatic;
+  int sNonStatic;
+  public static class NestedExmple{
+   public void f1(){
+   }
+  }
+  public class InnerExmple{
+   public void f2(){
+   }
+  }
+  public static void main(String[] args) {
+  }
+ }
+ public class MainNestedInner {
+  public static void main(String[] args) {
+   MyClass.NestedExmple obj1 =
+     new MyClass.NestedExmple();
+
+   MyClass.InnerExmple obj2 =
+     new MyClass().new InnerExmple();
+   obj1.f1();
+   obj2.f2();
+  }
+ }
+
+ * Local
+  public static void main(String[] args){
+   final String name1 = "Name1";
+   String name2 = "Name2";
+
+   class InnerLocal{
+    public void func(){
+
+     System.out.println(name1 +" "+ nameStatic);
+     //System.out.println(name2);//error
+   }
+   }
+  }
+ *****
+
+ public class DateExmple {
+
+
+  public static void main(String[] args) {
+   Date d = new Date();
+   Calendar c = new GregorianCalendar();
+    Calendar c2 = new GregorianCalendar(2014, 12, 20);//календарь на 20 01 2014
+   System.out.println("Date: " + d);
+   System.out.println("GregorianCalendar: " + d);
+   System.out.println("GregorianCalendar: " + c2);
+
+   SimpleDateFormat format1 = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+      SimpleDateFormat format2 = new SimpleDateFormat("День dd Месяц MM Год yyyy Время hh:mm");
+      SimpleDateFormat format3 = new SimpleDateFormat("dd-M-yyyy");
+      //
+      System.out.println(" SimpleDateFormat  format1 format2 format3 ");
+      System.out.println("1: "+format1.format(d));
+      System.out.println("2: "+format2.format(c.getTime()));
+      System.out.println("3: "+format3.format(c2.getTime()));
+      //
+      System.out.println();
+
+         //
+      System.out.println("FirstDayOfWeek = "+c.getFirstDayOfWeek());
+      System.out.println("TimeZone = "+c.getTimeZone());
+         System.out.println("DAY_OF_WEEK = "+Calendar.DAY_OF_WEEK);
+         System.out.println("DAY_OF_MONTH = "+Calendar.DAY_OF_MONTH);
+         System.out.println("DECEMBER = "+c2.DECEMBER);
+         //
+         c2.add(Calendar.DAY_OF_YEAR, 1); //увеличиваем дату на 1 день
+         System.out.println(c2.getTime());// Fri Feb 21 00:00:00 EET 2014
+         c2.add(Calendar.DAY_OF_YEAR, -1); //уменьшаем дату на 1 день
+         //
+         System.out.println(format3.format(c2.getTime()));//20 02 2014
+  }
+ }
+
+
+
+ [17:34:09] Кузменюк Максим: public enum MyEnum {
+  Black, Red, White;
+  public void f(){
+
+  }
+  public static void g(){
+
+  }
+  public static void main(String[] args) {
+   System.out.println("Hello !");
+  }
+ }
+ [17:34:17] Кузменюк Максим: public class MyEnumExample {
+  public static void main(String[] args) {
+   MyEnum obj = MyEnum.Black;
+   obj = MyEnum.Red;
+   obj.f();
+   MyEnum.g();
+
+   MyEnum[] consts = MyEnum.values();
+   MyEnum obj1 = MyEnum.valueOf("Black");
+   String s = obj1.toString();
+  }
+ }
+
