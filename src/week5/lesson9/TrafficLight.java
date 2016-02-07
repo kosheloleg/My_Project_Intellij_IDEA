@@ -29,6 +29,7 @@ public class TrafficLight {
     TrafficLight (){
 
         colorTrafficLight = EnumTrafColor.Red;
+        EnumTrafColor.up = false;
 
     }
 

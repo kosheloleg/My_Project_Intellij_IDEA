@@ -4,7 +4,11 @@ public enum EnumTrafColor {
 
     Red,Yellow,Green;
 
+
     public static boolean down;
+
+    static boolean up;
+
 
     public static EnumTrafColor getNextColor(EnumTrafColor trafColor){
 
@@ -14,19 +18,54 @@ public enum EnumTrafColor {
 
             if (trafColors[i]==trafColor){
 
-                if ((i+1)>=trafColors.length){
+                if (i!=trafColors.length-1 & i!=0){
 
-                    return trafColors[0];
+                    return trafColors[i+((up)? 1:-1)];
 
-                } else return trafColors[i+1];
+
+                } else {
+
+                    if (up) {
+
+                        up=!up;
+                        return trafColors[trafColors.length-1];
+                    } else {
+                        up=!up;
+
+                        return trafColors[1];
+                    }
+
+
+
+
+                }
+
+
 
             }
+
+
 
 
         }
 
 
-        return null;
+
+
+
+
+
+        if (trafColor==EnumTrafColor.Yellow){
+
+            return (up)? EnumTrafColor.Red:EnumTrafColor.Green;
+
+        } else{
+
+            up=!up;
+            return EnumTrafColor.Yellow;
+
+        }
+
     }
 
 }

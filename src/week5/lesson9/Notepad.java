@@ -39,8 +39,15 @@ public class Notepad {
 
         Message m = getMessageOnDate(dateX);
 
+
         if (m==null)  messages.add(new Message(dateX,strX));
         else  m.addNote(strX);
+
+        if (m==null)
+            messages.add(new Message(dateX,strX));
+        else
+            m.addNote(strX);
+
 
     }
 
@@ -48,7 +55,7 @@ public class Notepad {
 
         for (Message m:messages){
 
-            if (m.getDate().equals(dateX)) {}
+            if (m.getDate().equals(dateX))
 
                 return m;
             }
