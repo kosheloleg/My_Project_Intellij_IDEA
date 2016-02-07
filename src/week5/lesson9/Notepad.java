@@ -42,14 +42,6 @@ public class Notepad {
         if (m==null)  messages.add(new Message(dateX,strX));
         else  m.addNote(strX);
 
-  /*
-  if(в messages есть объект с датой dateX){
-   в этот объект(с этой датой) добавляем строку в
-   поле list
-  } else {
-   создаем новый объект Message и добавляем в messages
-  }
-  */
     }
 
     public Message getMessageOnDate(GregorianCalendar dateX){

@@ -4,6 +4,8 @@ public enum EnumTrafColor {
 
     Red,Yellow,Green;
 
+    public static boolean down;
+
     public static EnumTrafColor getNextColor(EnumTrafColor trafColor){
 
         EnumTrafColor[] trafColors = EnumTrafColor.values();

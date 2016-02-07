@@ -16,11 +16,11 @@ public class NotepadMain {
         GregorianCalendar date1 = new GregorianCalendar(2015,01,20);
         GregorianCalendar date2 = new GregorianCalendar(2015,01,21);
         n.add(date1, "Первая строка");
-        n.add(date1, "Вторая строка");
+//        n.add(date1, "Вторая строка");
         n.add(date2, "Третья строка");
-        n.printByDate(date1);
-
-        System.out.println("");
+//        n.printByDate(date1);
+//
+//        System.out.println("");
 
         n.printByDate(date2);
     }

@@ -363,3 +363,96 @@ Task2. Шифр Цезаря с ключом например 3.
     }
    Подумать о том, чтобы в перечислении был метод например getNextColor, который переключает светофор на следующий цвет.
    Последовательность цветов у светофора:ж,з,ж,к,ж,з,ж,к,ж,з,ж,к
+
+
+
+
+   HomeTask1. С помощью System.nanoTime() протестировать скорость работы алгоритмов сортировки:
+    - выборкой
+    - пузырьком
+    - вставками
+    - Шелла(половиной элементов)
+    - Подсчётом
+    - Хоара
+    Какой алгоритм быстрее, если:
+    - порядка 100 элементов
+    - порядка 1000 элементов
+    - порядка 10000 элементов
+
+   HomeTask2.
+   Реализовать двоичный поиск циклетами.
+   Реализовать двоичный поиск рекурсетами.
+
+
+   КАЛЬКУЛЯТОР
+   1. Результат
+   2. char, not String
+   3. Управление сложностью
+   4. Resultat и temp
+   5. Совместимость
+
+    Calc, Processor
+    [18:12:20] Кузменюк Максим: public interface Processorable {
+     public void inputChar(char c);
+     public void printResult();
+    }
+    [18:12:33] Кузменюк Максим:  *
+    [18:12:36] Кузменюк Максим: public abstract  class AbstractProcessor implements Processorable{
+     private int result;
+     private int temp;
+     @Override
+     public void printResult() {
+      System.out.println("Result = " + result);
+     }
+     protected void setResult(int r){
+      result = r;
+     }
+     public int getResult(){
+      return result;
+     }
+    }
+    [18:12:37] Кузменюк Максим: *
+    [18:12:45] Кузменюк Максим: public class TestProcessor extends AbstractProcessor{
+
+     @Override
+     public void inputChar(char c) {
+      System.out.println("Введено "+c);
+     }
+    }
+    [18:12:47] Кузменюк Максим: *
+    [18:12:56 | Изменены 18:13:04] Кузменюк Максим: public class Calc {
+     private AbstractProcessor proc;
+
+     public Calc(AbstractProcessor pr){
+      proc = pr;
+     }
+     public void inSymv(char c){
+      proc.inputChar( с );
+      proc.printResult();
+     }
+    }
+    [18:12:57] Кузменюк Максим: *
+    [18:13:13] Кузменюк Максим: м
+    [18:13:14] Кузменюк Максим: public class MainCalc {
+
+     public static void main(String[] args) {
+      AbstractProcessor processor = new TestProcessor();
+      AbstractProcessor processor1 = new TestProcessor();
+      Calc calc = new Calc(processor);
+
+      calc.inSymv('1');
+      calc.inSymv('2');
+      calc.inSymv('+');
+      calc.inSymv('4');
+      calc.inSymv('5');
+      calc.inSymv('=');
+     }
+    }
+
+
+    HomeTask3. Написать перечисления Марок автомобилей.
+     Сделать внутри возможность установки алиасов(синонимов).
+     В мейне с консоли я ввожу "BMW" и "Bmw"и "bm", и хочу иметь объект этого
+     перечисления. Сделать метод, который ищет подходящий
+     алиас и возвращает установленное значение.
+     Реализовать список алиасов и подумать как связать с конкретным значением!!!
