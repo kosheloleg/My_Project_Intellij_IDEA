@@ -21,4 +21,10 @@ public enum MyEnum {
         return false;
     }
 
+    EnumTrafColor getNextColor(EnumTrafColor currentColor){
+
+        return EnumTrafColor.Green;
+
+    }
+
 }

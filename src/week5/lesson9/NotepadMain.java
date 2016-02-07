@@ -18,7 +18,11 @@ public class NotepadMain {
         n.add(date1, "Первая строка");
         n.add(date1, "Вторая строка");
         n.add(date2, "Третья строка");
-//        n.printByDate(date1);
+        n.printByDate(date1);
+
+        System.out.println("");
+
+        n.printByDate(date2);
     }
 
 

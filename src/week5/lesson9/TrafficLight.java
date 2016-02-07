@@ -17,5 +17,19 @@ public class TrafficLight {
 
     EnumTrafColor colorTrafficLight;
 
+    EnumTrafColor getNextColor(){
+
+        EnumTrafColor nextColor = EnumTrafColor.getNextColor(colorTrafficLight);
+        colorTrafficLight = nextColor;
+
+        return nextColor;
+
+    }
+
+    TrafficLight (){
+
+        colorTrafficLight = EnumTrafColor.Red;
+
+    }
 
 }

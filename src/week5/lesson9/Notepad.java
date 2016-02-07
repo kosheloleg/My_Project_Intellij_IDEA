@@ -27,28 +27,20 @@ public class Notepad {
 
         }
 
+        ArrayList<String> getList(){
+
+            return list;
+
+        }
+
     }
 
     public void add(GregorianCalendar dateX, String strX){
 
-        boolean isMassageOnDate = false;
+        Message m = getMessageOnDate(dateX);
 
-        for (Message m:messages){
-
-            if (m.getDate().equals(dateX)) {
-
-                m.addNote(strX);
-                isMassageOnDate = true;
-
-
-            }
-
-            if (!isMassageOnDate){
-
-                messages.add(new Message(dateX,strX));
-            }
-
-        }
+        if (m==null)  messages.add(new Message(dateX,strX));
+        else  m.addNote(strX);
 
   /*
   if(в messages есть объект с датой dateX){
@@ -60,7 +52,32 @@ public class Notepad {
   */
     }
 
+    public Message getMessageOnDate(GregorianCalendar dateX){
+
+        for (Message m:messages){
+
+            if (m.getDate().equals(dateX)) {}
+
+                return m;
+            }
+
+        return null;
+    }
+
     public void printByDate(GregorianCalendar dateX){
+
+        Message m = getMessageOnDate(dateX);
+
+        if (m!=null) {
+
+            for (String str:m.getList()){
+
+                System.out.println(str);
+
+            }
+
+        } else System.out.println("На эту дату записей нет");
+
     }
 
 }
