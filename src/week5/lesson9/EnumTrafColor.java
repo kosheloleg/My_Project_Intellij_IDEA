@@ -18,7 +18,7 @@ public enum EnumTrafColor {
 
             if (trafColors[i]==trafColor){
 
-                if (i!=trafColors.length-1 & i!=0){
+                if (i!=(trafColors.length-1) & i!=0){
 
                     return trafColors[i+((up)? 1:-1)];
 
@@ -28,7 +28,7 @@ public enum EnumTrafColor {
                     if (up) {
 
                         up=!up;
-                        return trafColors[trafColors.length-1];
+                        return trafColors[trafColors.length-2];
                     } else {
                         up=!up;
 
