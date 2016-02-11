@@ -1,14 +1,12 @@
 package week5.lesson10;
 
-import java.util.Arrays;
-
 public class BinaryFind {
 
 
     public static void FindIndex(int[] arr,int k){
 
-        //System.out.println(k);
-        Find(arr,k);
+        System.out.println(Find(arr,k));
+
 
     }
 
@@ -17,38 +15,49 @@ public class BinaryFind {
 
     public static int Find(int[] arr,int k){
 
-        int[] arrCut;
 
-        int opornoe = (int)Math.round(arr.length/2);
 
-       // System.out.println(opornoe);
+        int opornoe;
 
-        if (k>=opornoe){
+        int begin = 0;
+        int end = arr.length-1;
 
-            arrCut = new int[arr.length-opornoe];
 
-            for (int i=opornoe;i<arr.length;i++){
+        while (true){
 
-                arrCut[i-opornoe] = arr[i];
+            opornoe = begin+ ((end - begin) / 2);
+
+            if (arr[opornoe]==k) return opornoe;
+
+
+            if (k >= arr[opornoe]) {
+
+                begin = opornoe;
+
+            } else {
+
+                end = opornoe;
 
             }
 
-        } else {
+            if (end - begin == 1) {
 
-            arrCut = Arrays.copyOf(arr,opornoe);
+                if (arr[begin] == k) return begin;
+
+                else if (arr[end] == k) return end;
+
+                else return  -1;
+
+
+            }
+
 
         }
 
-        System.out.println(Arrays.toString(arrCut));
 
-        return 0;
+
 
     }
-
-
-
-
-
 
 
 }
