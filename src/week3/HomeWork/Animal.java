@@ -5,9 +5,9 @@ public abstract class Animal {
 
     private String name;
 
-    abstract void say();
-    abstract void riseHair();
-    abstract void yellIfNotGorged();
+    protected abstract void say();
+    protected abstract void riseHair();
+    protected abstract void yellIfNotGorged();
 
 
     public Animal(String name){
