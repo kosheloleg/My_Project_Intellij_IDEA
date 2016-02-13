@@ -220,3 +220,25 @@ files.add(arr[j])
   }
  }
 
+Дженерики не работают с примитивным типами
+
+Все класы являются наследниками Object
+
+Олдносвязный список э то спмсок знающий только первый эл.
+Эл односвязного списка знают свего соседа
+
+class MyFirstList{
+private Element first;
+        add(e);
+        get(i);
+        size()
+        print()
+
+}
+
+
+class Element{
+pribate int value;
+private Element next
+
+}

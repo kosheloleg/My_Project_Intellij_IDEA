@@ -154,3 +154,59 @@ public class Task1 {
  }
 }
 --------------------------------------------------------------------
+
+ДЖЕНЕРИКИ
+
+[15:50:18] Кузменюк Максим: public class ContainerGeneric {
+ public static void main(String[] args) {
+  Container<Integer> obj1 = new Container<Integer>();
+  obj1.setValue(10);
+  System.out.println(obj1.getValue());
+
+  Container<String> obj2 = new Container<>();
+  obj2.setValue("ab");
+  System.out.println(obj2.getValue());
+
+  Container<Double> obj3 = new Container<>();
+  obj3.setValue(20.5);
+  System.out.println(obj3.getValue());
+ }
+}
+class Container<T> {
+ private T value;
+ public T getValue() {
+  return value;
+ }
+ public void setValue(T value) {
+  this.value = value;
+ }
+}
+[15:50:30] Кузменюк Максим: public class SwapMethods {
+ public static void swap(int[] a, int x, int y) {
+  int temp = a[x];
+  a[x] = a[y];
+  a[y] = temp;
+ }
+ public static void swap(char[] a, int x, int y) {
+  char temp = a[x];
+  a[x] = a[y];
+  a[y] = temp;
+ }
+
+ public static void main(String[] args) {
+  String[] a = new String[10];
+  SwapMethods.<String>swap (a, 1, 2);
+
+  SwapMethods.<Integer>swap (new Integer[]{10,20,4}, 1, 2);
+  SwapMethods.swap (new Integer[]{10,20,3}, 1, 2);
+  System.out.println();
+ }
+ public static <T> T swap(T[] a, int x, int y) {
+  T temp = a[x];
+  a[x] = a[y];
+  a[y] = temp;
+  return temp;
+ }
+}
+
+--------------------------------------
