@@ -15,38 +15,37 @@ public class Task2 {
 
         AnyVector<Integer> m = new AnyVector<Integer>(massStr);
 
-        Integer str = m.get(0);
+        Integer str = m.get(1);
 
         System.out.println(str);
 
     }
 
+}
 
-    static class AnyVector<T> {
+class AnyVector<T> {
 
-        AnyVector(T[] m){
+    AnyVector(T[] m){
 
-            mass = m;
-
-        }
-
-        private T[] mass;
-
-        public void set(T[] mass) {
-
-            this.mass = mass;
-
-        }
-
-        public T get(int k){
-
-            return mass[k];
-
-        }
-
-
-
+        mass = m;
 
     }
+
+    private T[] mass;
+
+    public void set(T[] mass) {
+
+        this.mass = mass;
+
+    }
+
+    public T get(int k){
+
+        return mass[k];
+
+    }
+
+
+
 
 }

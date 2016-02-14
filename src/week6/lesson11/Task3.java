@@ -32,8 +32,6 @@ public class Task3 {
             Dog dog = new Dog();
 
 
-
-
 //            if (animal.getClass() == cat.getClass() ){
 //
 //                System.out.println("Мяу");
