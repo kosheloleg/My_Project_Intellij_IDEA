@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class Task2 {
 
     private static ArrayList<File> listWithFileNames = new ArrayList<>();
+
     public static void main(String[] args) {
         getListFiles("C:\\1\\");
 

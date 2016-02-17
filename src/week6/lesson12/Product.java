@@ -42,12 +42,12 @@ import java.text.SimpleDateFormat;
         @Override
         public int compareTo(Object obj) {
             Product product = (Product)(obj);
-            return this.name.compareTo(product.getName());
+            return this.getName().compareTo(product.getName());
         }
         @Override
         public String toString(){
             SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-            return name + " " + price + " " + format.format(date.getTime()) + "\n";
+            return name + " " + price + "            " + format.format(date.getTime()) + "\n";
         }
         @Override
         public boolean equals(Object obj){
