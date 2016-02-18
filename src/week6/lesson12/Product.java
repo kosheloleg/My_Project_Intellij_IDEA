@@ -1,7 +1,8 @@
 package week6.lesson12;
 
-import java.util.Calendar;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 //Task1. Написать класс Product у которого есть поля:
@@ -19,7 +20,7 @@ import java.text.SimpleDateFormat;
 //        Отсортировать список по цене и вывести на экран
 //        Отсортировать список по дате закупки и вывести на экран
 
-    public class Product implements Comparable{
+    public class Product  implements Comparable{
         private String name;
         private double price;
         private Calendar date;
@@ -34,10 +35,10 @@ import java.text.SimpleDateFormat;
             return date;
         }
 
-        public Product(String name,double price,Calendar date){
-            this.name = name;
-            this.price = price;
-            this.date = date;
+        public Product (String name,double price,Calendar date) throws PriceException,DateException{
+            setName(name);
+            setPrice(price);
+            setDate(date);
         }
         @Override
         public int compareTo(Object obj) {
@@ -53,6 +54,64 @@ import java.text.SimpleDateFormat;
         public boolean equals(Object obj){
             Product product = (Product)(obj);
             return this.getName().equals(product.getName());
+        }
+
+        public void setPrice(double price) throws PriceException{
+
+            if (price<0)
+
+
+
+
+               throw new PriceException("Цена не может быть отрицательной");
+
+
+
+
+            else this.price = price;
+        }
+
+        public void setName(String name){
+
+            this.name = name;
+        }
+
+        public void setDate(Calendar date) throws DateException{
+
+            Calendar yesterYear = new GregorianCalendar(2016,01,01);
+
+            if (date.before(yesterYear)){
+
+                throw new DateException("Дата покупки не может быть прошлогодней!");
+
+            }
+
+
+            else this.date = date;
+
+        }
+
+
+        public class PriceException extends Exception {
+
+            public PriceException(String massage) {
+
+                super(massage);
+
+            }
+
+
+        }
+
+        public class DateException extends Exception {
+
+            public DateException(String massage) {
+
+                super(massage);
+
+            }
+
+
         }
 
     }

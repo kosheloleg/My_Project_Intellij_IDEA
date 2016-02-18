@@ -5,7 +5,7 @@ import java.util.*;
 
 public class MainProduct {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Product.PriceException,Product.DateException{
         Calendar date1 = new GregorianCalendar(2014,01,01);
         Calendar date2 = new GregorianCalendar(2014,02,01);
         Calendar date3 = new GregorianCalendar(2014,03,01);

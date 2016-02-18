@@ -4,7 +4,7 @@ public class MainEnumMarksAvto {
 
     public static void main(String[] args) {
 
-        EnumMarksAvto marka = EnumMarksAvto.selectOfMarks("Bvv");
+        EnumMarksAvto marka = EnumMarksAvto.selectOfMarks("vol");
 
         System.out.println("Марка "+marka);
 

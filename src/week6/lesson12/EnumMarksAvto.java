@@ -7,7 +7,9 @@ import java.util.ArrayList;
 public enum EnumMarksAvto {
 
     BMW,
+    BMQ,
     Volvo,
+    Vova,
     VW,
     Opel,
     Audi;
@@ -22,20 +24,20 @@ public enum EnumMarksAvto {
         char[] arrayText = text.toCharArray();
         char[] arrayCharMarks;
 
-        for (int i=0;i<arrayText.length;i++){
+        for (int i = 0; i < arrayText.length; i++) {
 
-            for (EnumMarksAvto m:listOfMarks){
+            for (EnumMarksAvto m : listOfMarks) {
 
                 arrayCharMarks = m.toString().toCharArray();
 
-                if (i<arrayCharMarks.length){
+                if (i < arrayCharMarks.length) {
 
-                if (arrayText[i] == arrayCharMarks[i]){
+                    if (Character.toString(arrayText[i]).equalsIgnoreCase(Character.toString(arrayCharMarks[i]))) {
 
 
-                    dopListOfMarks.add(m);
+                        dopListOfMarks.add(m);
 
-                }
+                    }
 
                 }
 
@@ -43,14 +45,15 @@ public enum EnumMarksAvto {
 
             listOfMarks = dopListOfMarks;
 
-            if (listOfMarks.size()==1){
+            dopListOfMarks = new ArrayList<EnumMarksAvto>();
+
+            if (listOfMarks.size() == 1) {
 
                 return listOfMarks.get(0);
 
             }
 
         }
-
 
 
         return null;
