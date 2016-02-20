@@ -364,3 +364,113 @@ public class Test5Exception {
      }
  }
 }
+
+Нужно выучить:
+Полиморфизм
+Инкапсуляция
+Наследие
+Абстракция
+Интерфейсы
+Дженерики
+Делегирование
+Агрегирование
+Сортировки Comparable, compareTo
+
+
+Потоки ввода/вывода: Символьный, байтовый
+Input Stram наследники Writer
+Output Stram           Reade
+
+Предопределенные потоки
+System.in
+System.err
+System.out
+
+***************************************************
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+public class FileOutputStreamExmple {
+ public static void main(String[] args) throws IOException {
+  OutputStream os = new FileOutputStream("file2.txt");
+  byte[] buf = {100,101,102};
+  os.write(123);
+  os.write(buf);
+  os.close();
+ }
+}
+***************************************************
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class FileInputStreamExmple {
+ public static void main(String[] args) throws IOException {
+  InputStream is = new FileInputStream("file2.txt");
+  int example = 3;
+  int k;
+
+  if(example == 1){
+   int codeChar = 10;
+   while(codeChar > -1){
+    codeChar = is.read();
+    System.out.println(codeChar + " = [" + ((char)codeChar) + "]");
+   }
+  }
+  if(example == 2){
+   byte[] buf = new byte[20];
+   k = is.read(buf);
+   System.out.println("k="+k);
+   for(byte b : buf) System.out.println("["+b+"]=["+(char)(b)+"]");
+  }
+  if(example == 3){
+   is.read();
+   int len = is.available();
+   System.out.println(len);
+   byte[] buf = new byte[len];
+   k = is.read(buf);
+   System.out.println("k="+k);
+   for(byte b : buf) System.out.println("["+b+"]=["+(char)(b)+"]");
+  }
+ }
+}
+
+**********************************************
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
+public class BufferedReaderExmple {
+ public static void main(String[] args) throws IOException {
+  Reader isr = new InputStreamReader(System.in);
+        BufferedReader d = new BufferedReader(isr);
+
+/*
+        String a = d.readLine();
+
+        System.out.println("Вы напечатали: " + a);
+*/
+
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+        System.out.println(d.read());
+ }
+}
+
+Клонирование
+
+Clonable - это говорит о том что сущность может быть клонирована
+
+
+Поверностное
