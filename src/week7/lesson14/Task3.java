@@ -6,12 +6,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Task3 {
 
     public static void main(String[] args) {
+
+        ArrayList<Car> cars = new ArrayList<>();
 
         String dir;
 
@@ -38,7 +41,7 @@ public class Task3 {
                 ObjectInputStream oin = new ObjectInputStream(fis);
                 try {
                     car = (Car) oin.readObject();
-                    System.out.println(car);
+                    cars.add(car);
 
                 } finally {
                     oin.close();
@@ -51,6 +54,11 @@ public class Task3 {
 
         }
 
+       for (Car c:cars){
+
+           System.out.println(c);
+
+       }
 
     }
 
