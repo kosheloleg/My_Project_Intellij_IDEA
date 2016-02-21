@@ -1,7 +1,9 @@
 package week7.lesson13;
 
 
-public class Car implements Cloneable{
+import java.io.Serializable;
+
+public class Car implements Cloneable,Serializable{
     private int countWheel = 4;
     private String number;
     private Engine engine;
@@ -73,32 +75,3 @@ public class Car implements Cloneable{
 
 }
 
-class Engine implements Cloneable{
-    private String number;
-
-    public Engine(String number) {
-        super();
-        this.number = number;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    @Override
-    public String toString() {
-        return "Engine [number=" + number + "]";
-    }
-
-    @Override
-    public Engine clone() throws CloneNotSupportedException{
-        Engine engine1 = (Engine)super.clone();
-
-        return engine1;
-    }
-
-}

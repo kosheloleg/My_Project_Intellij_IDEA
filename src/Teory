@@ -473,4 +473,66 @@ public class BufferedReaderExmple {
 Clonable - это говорит о том что сущность может быть клонирована
 
 
-Поверностное
+Поверностное и глубокое
+
+      Try - with - resources
+
+      Seriliazable - процесс преобразование объект в байт код (число)
+      Desirializable - процесс преобразование байт код в объект
+
+//////////////////////////////////Сериализация и десериализация
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class TestSerilizable {
+ public static void main(String[] args) {
+  try {
+   Product pr1 = new Product("Колбаса");
+
+       // запись
+       FileOutputStream fos = new FileOutputStream("temp.out");
+       ObjectOutputStream oos = new ObjectOutputStream(fos);
+       try {
+        oos.writeObject(pr1);
+       } finally {
+        oos.close();
+       }
+
+   // чтение
+   Product pr2;
+   FileInputStream fis = new FileInputStream("temp.out");
+   ObjectInputStream oin = new ObjectInputStream(fis);
+   try {
+    pr2 = (Product) oin.readObject();
+    System.out.println(pr2);
+
+   } finally {
+    oin.close();
+   }
+  } catch (IOException e) {
+   e.printStackTrace();
+  } catch (ClassNotFoundException e) {
+   e.printStackTrace();
+  }
+
+ }
+
+}
+transient
+
+import java.io.Serializable;
+public class Product implements Serializable {
+
+ private static final long serialVersionUID = 1L;
+
+ private String name;
+ public Product(String n){
+  name = n;
+ }
+ public String toString(){
+  return name;
+ }
+}
