@@ -27,11 +27,16 @@ public abstract  class AbstractProcessor implements Processorable {
 
         if (tempOperation=='='){
 
-            setResult(getResult()+getTemp());
+            if (getTempOperation()=='+') setResult(getTemp()+getResult());
+            if (getTempOperation()=='-') setResult(getTemp()-getResult());
+            if (getTempOperation()=='/') setResult(getTemp()/getResult());
+            if (getTempOperation()=='*') setResult(getTemp()*getResult());
+
+
         }
 
         else
-        this.tempOperation = tempOperation;
+            this.tempOperation = tempOperation;
     }
 
     public void setTemp(int temp){

@@ -6,6 +6,13 @@ public class TestProcessor extends AbstractProcessor {
     public void inputChar(char c) {
         System.out.println("Введено "+c);
 
+        if (c=='c') {
+            super.setResult(0);
+            super.setTemp(0);
+            super.setTempOperation(' ');
+            return;
+        }
+
         int digit = Character.getNumericValue(c);
         String str="";
 
