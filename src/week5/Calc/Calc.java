@@ -1,7 +1,5 @@
 package week5.Calc;
 
-import week5.Calc.AbstractProcessor;
-
 public class Calc {
     private AbstractProcessor proc;
 

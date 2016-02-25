@@ -8,24 +8,31 @@ public class MainCalc {
         Calc calc = new Calc(processor);
 
         calc.inSymv('1');
+        calc.inSymv('.');
         calc.inSymv('2');
-        calc.inSymv('+');
-        calc.inSymv('4');
-        calc.inSymv('5');
-        calc.inSymv('=');
-        calc.inSymv('-');
-        calc.inSymv('1');
-        calc.inSymv('0');
-        calc.inSymv('=');
-        calc.inSymv('+');
-        calc.inSymv('1');
-        calc.inSymv('3');
-        calc.inSymv('=');
         calc.inSymv('*');
+        calc.inSymv('3');
+
+        calc.inSymv('.');
         calc.inSymv('2');
+
         calc.inSymv('=');
 
-        calc.inSymv('c');
+//        calc.inSymv('+');
+//
+//        calc.inSymv('0');
+//        calc.inSymv('.');
+//        calc.inSymv('1');
+//        calc.inSymv('6');
+//        calc.inSymv('=');
+
+//        calc.inSymv('1');
+//        calc.inSymv('2');
+//        calc.inSymv('+');
+//        calc.inSymv('4');
+//        calc.inSymv('5');
+//        calc.inSymv('=');
+
 
     }
 }

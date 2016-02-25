@@ -24,18 +24,23 @@ public class TestProcessor extends AbstractProcessor {
 
         if (digit>=0){
 
-            str = ""+super.getResult()+c;
+            if (super.getTempOperation()=='.') {str = ""+(int)super.getResult()+'.'+c;}
+
+            else  str = ""+(int)super.getResult()+c;
+
+            if (super.getTempOperation()=='.') super.setTempOperation(' ');
 
 
-            super.setResult(Integer.valueOf(str));
+            super.setResult(Double.valueOf(str));
 
         } else {
 
-            if (c!='=') super.setTemp(getResult());
+            if ((c!='=') && (c!='.')) super.setTemp(getResult());
 
 
+            if ((c=='.') || (c=='='))
             super.setTempOperation(c);
-
+            else super.setTempOperationMath(c);
 
         }
     }

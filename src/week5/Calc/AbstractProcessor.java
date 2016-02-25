@@ -1,9 +1,10 @@
 package week5.Calc;
 
 public abstract  class AbstractProcessor implements Processorable {
-    private int result;
-    private int temp;
+    private double result;
+    private double temp;
     private char tempOperation;
+    private char tempOperationMath;
     @Override
     public void printResult() {
         System.out.println("Temp " + temp);
@@ -11,11 +12,19 @@ public abstract  class AbstractProcessor implements Processorable {
         System.out.println();
     }
 
+    public void setTempOperationMath(char tempOperationMath){
+        this.tempOperationMath = tempOperationMath;
+    }
 
-    protected void setResult(int r){
+    public char getTempOperationMath(){
+        return this.tempOperationMath;
+    }
+
+
+    protected void setResult(double r){
         result = r;
     }
-    public int getResult(){
+    public double getResult(){
         return result;
     }
 
@@ -27,11 +36,14 @@ public abstract  class AbstractProcessor implements Processorable {
 
         if (tempOperation=='='){
 
-            if (getTempOperation()=='+') setResult(getTemp()+getResult());
-            if (getTempOperation()=='-') setResult(getTemp()-getResult());
-            if (getTempOperation()=='/') setResult(getTemp()/getResult());
-            if (getTempOperation()=='*') setResult(getTemp()*getResult());
+            if (getTempOperationMath()=='+') setResult(getTemp()+getResult());
+            if (getTempOperationMath()=='-') setResult(getTemp()-getResult());
+            if (getTempOperationMath()=='/') setResult(getTemp()/getResult());
+            if (getTempOperationMath()=='*') setResult(getTemp()*getResult());
 
+            setTemp(0);
+            setTempOperationMath(' ');
+            setTempOperation(' ');
 
         }
 
@@ -39,14 +51,14 @@ public abstract  class AbstractProcessor implements Processorable {
             this.tempOperation = tempOperation;
     }
 
-    public void setTemp(int temp){
+    public void setTemp(double temp){
 
         this.temp = temp;
 
 
     }
 
-    public int getTemp(){
+    public double getTemp(){
 
         return temp;
 
