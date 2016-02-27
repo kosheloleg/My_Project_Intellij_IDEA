@@ -210,3 +210,38 @@ class Container<T> {
 }
 
 --------------------------------------
+
+Планировщие потоков
+
+class M extend Trhread{
+
+@override
+public void run(){
+                    }
+    }
+}
+
+M obj = new M();
+obj.start();
+----------------------------------
+
+class N implement Runable{}
+Thread obj = new Thread(new M());
+obj.start()
+----------------------------------
+
+
+
+Потоки выполнения
+
+setPriority(5);
+setDaemon(true/false)
+демон поток это поток который останавливается главный для него.
+join() заставляет текущий поток дождатся выполнения потока для которого вызван метод join.
+interrupt() - установитьФл, isInterrupted()-Проверить фл. - методы для работы с флашком остановки.
+getState() - поток может находится в следующих состояниях :
+1. New
+2. Runnable
+3. WaitingTime
+4. Blocked
+5. Terminate
