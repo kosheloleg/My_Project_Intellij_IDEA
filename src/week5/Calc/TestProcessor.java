@@ -26,7 +26,23 @@ public class TestProcessor extends AbstractProcessor {
 
             if (super.getTempOperation()=='.') {str = ""+(int)super.getResult()+'.'+c;}
 
-            else  str = ""+(int)super.getResult()+c;
+            else {
+
+                if (super.getResult()==0){str = ""+(int)super.getResult()+c;}
+                else {
+
+                    if ((super.getResult()<1)) {str = ""+super.getResult()+c;}
+
+                    else  str = ""+(int)super.getResult()+c;
+
+
+                }
+
+
+
+            }
+
+
 
             if (super.getTempOperation()=='.') super.setTempOperation(' ');
 
@@ -39,7 +55,7 @@ public class TestProcessor extends AbstractProcessor {
 
 
             if ((c=='.') || (c=='='))
-            super.setTempOperation(c);
+                super.setTempOperation(c);
             else super.setTempOperationMath(c);
 
         }

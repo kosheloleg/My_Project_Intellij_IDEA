@@ -7,17 +7,29 @@ public class MainCalc {
         AbstractProcessor processor1 = new TestProcessor();
         Calc calc = new Calc(processor);
 
+
+
+        calc.inSymv('0');
+        calc.inSymv('.');
         calc.inSymv('1');
-        calc.inSymv('.');
-        calc.inSymv('2');
-        calc.inSymv('*');
-        calc.inSymv('3');
-
-        calc.inSymv('.');
-        calc.inSymv('2');
-
+        calc.inSymv('6');
+        calc.inSymv('+');
+        calc.inSymv('4');
         calc.inSymv('=');
 
+
+
+//        calc.inSymv('1');
+//        calc.inSymv('.');
+//        calc.inSymv('2');
+//        calc.inSymv('*');
+//        calc.inSymv('3');
+//
+//        calc.inSymv('.');
+//        calc.inSymv('2');
+//
+//        calc.inSymv('=');
+//
 //        calc.inSymv('+');
 //
 //        calc.inSymv('0');
@@ -25,7 +37,7 @@ public class MainCalc {
 //        calc.inSymv('1');
 //        calc.inSymv('6');
 //        calc.inSymv('=');
-
+//
 //        calc.inSymv('1');
 //        calc.inSymv('2');
 //        calc.inSymv('+');
