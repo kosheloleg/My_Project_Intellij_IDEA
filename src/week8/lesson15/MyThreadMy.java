@@ -44,7 +44,7 @@ class SecondThread extends Thread{
             System.out.println(simpleDateFormat.format(date));
 
             try {
-                sleep(4000);
+                Thread.sleep(4000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
