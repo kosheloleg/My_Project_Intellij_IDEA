@@ -20,10 +20,9 @@ public class Task1 {
         while(codeChar > -1){
             codeChar = is.read();
 
-            if (codeChar!=32 & codeChar!=10 & codeChar!=13){
+            if (codeChar!=32 & codeChar!=10 & codeChar!=13 & codeChar!=-1){
 
                 str = str+ (char)codeChar;
-
 
             }
             else {
@@ -39,8 +38,16 @@ public class Task1 {
                 str = "";}
             }
 
+        }
+
+        if (str!=""){
+
+            k = Integer.valueOf(str);
+
+            arrInt.add(k);
 
         }
+
 
         System.out.println(arrInt.toString());
 
