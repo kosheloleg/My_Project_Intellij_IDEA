@@ -11,6 +11,30 @@ public class MainCalc {
 
         testCalc.inChar('+');
         testCalc.inChar('5');
+        testCalc.inChar('6');
+        testCalc.inChar('7');
+
+        testCalc.inChar('=');
+
+        testCalc.inChar('-');
+        testCalc.inChar('8');
+        testCalc.inChar('2');
+        testCalc.inChar('=');
+
+        testCalc.inChar('-');
+        testCalc.inChar('9');
+        testCalc.inChar('0');
+        testCalc.inChar('0');
+        testCalc.inChar('=');
+
+        testCalc.inChar('+');
+        testCalc.inChar('3');
+        testCalc.inChar('0');
+        testCalc.inChar('0');
+        testCalc.inChar('=');
+
+
+
 
 
 

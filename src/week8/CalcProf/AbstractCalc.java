@@ -48,15 +48,59 @@ public class AbstractCalc implements Calculator{
     @Override
     public void inChar(char p) {
 
-        if ((operation!=' ') & (operation!='=')) {temp = Character.getNumericValue(p);}
+
 
         if ((p=='+') || (p=='-') || (p=='*') || (p=='/') || (p=='=')){
 
+
+            if (p=='='){
+
+                int resultInt= Integer.valueOf(getResult());
+
+                if (operation=='+')   result =Integer.toString(temp+resultInt);
+                if (operation=='-')   result =Integer.toString(temp-resultInt);
+                if (operation=='*')   result =Integer.toString(temp*resultInt);
+
+                if (operation=='/') {
+
+
+
+                    if (resultInt==0){
+
+                        result= "By zero";}
+                    else {
+
+                        result =Integer.toString(temp/resultInt);
+                    }
+
+
+
+                }
+
+
+
+
+
+
+                operation=' ';
+                temp=0;
+
+            }else {
+
             operation = p;
 
-            temp = Integer.valueOf(getResult());
+            temp = Integer.valueOf(getResult());}
 
         } else {
+
+            if (!getResult().equals("")) {
+
+                if (Integer.valueOf(getResult()) == temp) {
+
+                    result = "";
+                }
+            }
+
 
             result += p;
 
