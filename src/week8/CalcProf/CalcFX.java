@@ -13,8 +13,6 @@ import javafx.stage.Stage;
 
 public class CalcFX extends Application {
 
-
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -26,6 +24,8 @@ public class CalcFX extends Application {
         primaryStage.show();
 
     }
+
+    AbstractCalc testCalc = new AbstractCalc();
 
     TextField text;
 
@@ -58,7 +58,7 @@ public class CalcFX extends Application {
 
         btnCE =createAndSetSeizeButton(btnCE,"CE");
         btnCE.setStyle("-fx-text-fill: red;-fx-font-size: 16pt");
-        btnCE.setOnAction(new MyEvent());
+        //btnCE.setOnAction(new MyEvent());
 
         btn0 =createAndSetSeizeButton(btn0,"0");
         btn_equals =createAndSetSeizeButton(btn_equals,"=");
@@ -117,6 +117,8 @@ public class CalcFX extends Application {
         b.setMinSize(100,75);
         b.setStyle("-fx-font-size: 16pt");
 
+        b.setOnAction(new MyEvent());
+
         return b;
 
     }
@@ -127,14 +129,14 @@ public class CalcFX extends Application {
         @Override
         public void handle(ActionEvent event) {
 
-            if (event.getSource() == btn1){
+
+            if (event.getSource() == btn0){
+
+                testCalc.inChar('0');
+            } else if (event.getSource() == btn1){testCalc.inChar('1');}
 
 
-
-
-            }
-
-
+            text.setText(testCalc.getResult());
 
         }
     }
