@@ -48,6 +48,15 @@ public class AbstractCalc implements Calculator{
     @Override
     public void inChar(char p) {
 
+        if (p=='C'){
+
+            result="";
+            temp=0;
+            operation =' ';
+
+            return;
+        }
+
 
 
         if ((p=='+') || (p=='-') || (p=='*') || (p=='/') || (p=='=')){

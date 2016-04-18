@@ -133,7 +133,24 @@ public class CalcFX extends Application {
             if (event.getSource() == btn0){
 
                 testCalc.inChar('0');
-            } else if (event.getSource() == btn1){testCalc.inChar('1');}
+            }
+            else if (event.getSource() == btn1){testCalc.inChar('1');}
+            else if (event.getSource() == btn2){testCalc.inChar('2');}
+            else if (event.getSource() == btn3){testCalc.inChar('3');}
+            else if (event.getSource() == btn4){testCalc.inChar('4');}
+            else if (event.getSource() == btn5){testCalc.inChar('5');}
+            else if (event.getSource() == btn6){testCalc.inChar('6');}
+            else if (event.getSource() == btn7){testCalc.inChar('7');}
+            else if (event.getSource() == btn8){testCalc.inChar('8');}
+            else if (event.getSource() == btn9){testCalc.inChar('9');}
+            else if (event.getSource() == btn0){testCalc.inChar('0');}
+
+            else if (event.getSource() == btn_plus){testCalc.inChar('+');}
+            else if (event.getSource() == btn_minus){testCalc.inChar('-');}
+            else if (event.getSource() == btn_mult){testCalc.inChar('*');}
+            else if (event.getSource() == btn_div){testCalc.inChar('/');}
+            else if (event.getSource() == btn_equals){testCalc.inChar('=');}
+            else if (event.getSource() == btnCE){testCalc.inChar('C');}
 
 
             text.setText(testCalc.getResult());
