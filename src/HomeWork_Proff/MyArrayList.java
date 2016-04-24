@@ -1,6 +1,8 @@
 package HomeWork_Proff;
 
 
+
+
 public class  MyArrayList<Q> {
 
     Q vector[];
