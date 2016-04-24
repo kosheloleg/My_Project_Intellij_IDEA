@@ -567,3 +567,83 @@ Task2. Шифр Цезаря с ключом например 3.
        private TypeProduct type;
        private int party;
       }
+
+
+    //Proff
+
+      long time1 = System.nanoTime();
+       operation();
+      long time2 = System.nanoTime();
+
+      long score = time2 - time1;
+
+
+      Домашнее задание:
+      1. Сравнить ArrayList vs LinkedList с помощью механизма System.nanoTime().
+      Вставка случайных чисел от 1 до 10000.
+       - вставка вначало( в индекс 0)
+       - вставка в середину ( в индекс size()/2)
+       - вставка в конец ( в индекс size())
+      10000 элементов
+      какая разница в скорости ArrayList, если в конструкторе задавать capacity 11000 или не задавать.
+      кто быстрее и насколько при подсчете суммы чисел из ArrayList vs LinkedList.
+
+        long time1 = System.nanoTime();
+         //
+        long time2 = System.nanoTime();
+        long score = time2 - time1;
+
+      2. Добавить в класс полей, чтобы получилсь: User(name, login, pass, dateOfExpire)
+      В класс Base добавить метод
+       - void usersToFile(String fileName)
+       - User[] usersFromFile(String fileName)
+       - void usersSerializeToFile(String fileName)
+       - User[] usersDeSerializeFromFile(String fileName)
+
+      3. Создать клас MyArrayList<T> с дженериком T
+       с полем T[] arr;
+       с методами:
+       - add
+       - get
+       - size
+       - toArray()
+       - sort
+       - forEach-попробовать реализовать такой метод(он принимает интерфейс Consumer)
+
+      4. Создать класс MyHashSet<T> с дженериком Т
+       с полем Node<T>[] arr, где элемент Node<T> хранит односвязанный список
+       с методами:
+        - add()
+        - contains()
+        - size()
+       class Node{
+        Node next;
+        T value;
+       }
+      }
+      ******************************************************************
+      public interface Calculator{
+       public final static String ByZero = "Error";
+       public void printResult();
+       public String getResult();
+       public void inChar(char p);
+      }
+      public abstract class AbstractCalc implements Calculator{
+       protected String result;
+       protected int temp;
+       protected char operation;
+       @Override
+       public void printResult(){
+        System.out.println("Result = " + result);
+       }
+       public String getResult(){
+        return result;
+       }
+      }
+      public class MyCalc extends AbstractCalc{
+
+      }
+      Создать целочисленный калькулятор класс Calc наследник AbstractCalc, в котором реализовать метод inChar
+      Вводимые символы такие: цифры, +, -, *, /, =
+      Будем считать, что ввод символов возможен только те, что мы определили - цифры, операции и равно.
+      Последовательность ввода такая: число1 + операция + число2 + равно.
