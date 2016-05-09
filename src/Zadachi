@@ -574,6 +574,21 @@ Task2. Шифр Цезаря с ключом например 3.
 
       Домашние размещаем в папках: hwWeek1 и hwWeek2.
 
+
+
+      Написать программу:
+      Enum TypeProduct{Bread, Yogurt, Milk}
+      class Product{name, TypeProduct type, int numberParty}
+      ProductShop{Map<Product, String> shop(Product, NameOfContructor)}
+      Добавить в Карту по паре продуктов каждого типа.
+      Сделать:
+      1) Вывести список фирм в алфавитном порядке
+      2) Вывести список фирм в обратном порядке
+      3) Вывести уникальные наименования товаров по типу продуктов
+
+
+
+
       Задача1.
       Целочисленный калькулятор:
 
