@@ -245,3 +245,16 @@ getState() - поток может находится в следующих со
 3. WaitingTime
 4. Blocked
 5. Terminate
+
+----SQL--------------------------------------
+select * , (distinct), колонки
+from таблицы
+where id>10
+[>, <, <>, !=, >=, <=, NULL, is NULL, IS NOT NULL
+AND OR NOT
+BETWEEN, IN
+LIKE % _
+]
+GROUP BY колонки
+HAVING условие
+ORDER BY колонки DESC|ASC
