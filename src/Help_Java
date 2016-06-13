@@ -246,15 +246,65 @@ getState() - поток может находится в следующих со
 4. Blocked
 5. Terminate
 
-----SQL--------------------------------------
-select * , (distinct), колонки
-from таблицы
-where id>10
-[>, <, <>, !=, >=, <=, NULL, is NULL, IS NOT NULL
-AND OR NOT
-BETWEEN, IN
-LIKE % _
-]
-GROUP BY колонки
-HAVING условие
-ORDER BY колонки DESC|ASC
+
+
+
+
+
+
+
+Парные/непарные
+Строчные/Блочные
+Пробелы игнорируются, Спецсимволы,
+
+Теги верхнего уровня: html, head, body
+Теги заголовка страницы: head, title, meta, link
+p, div - парные теги, как основные контейнеры
+h1,h2,h3,h4,h5,h6 - заголовки
+pre, span, sub, small, big, strong, b - парные теги, для форматирования текста
+img - не парный тег картинки
+a - парный для ссылки
+br - непарный для перехода на следующую строку
+ul>li, ol>li - списки
+table, tr, td, (thead, tbody)
+Теги  для фреймов(frame, frameset, iframe)
+Теги для форм (input, select, form, textarea, button)
+
+div, p, span, h1,h2,h3,h4,h5,h6, center, table, a, ul, li, textarea - парные теги с содержимым (контейнеры).
+*********************************
+<a href="index2.html" >ссылка</a>
+<h2>Пример</h2>
+<img src="/img/pic.bmp">
+<table>
+ <tr><td>1</td><td>2</td><td>3</td></tr>
+ <tr><td>4</td><td>5</td><td>6</td></tr>
+</table>
+colspan, rowspan
+*********************************
+Элементы форм:
+ <input type="text" value="имя">, password, email
+ <textarea>..</textarea>,
+ <select><option>1</option><option>2</option></select>
+ <input type="button" value="имя">, submit
+ <input type="radio" name="group"><input type="radio" name="group" checked>
+ <input type="checkbox" checked>
+*********************************
+Свойства тегов: disabled, checked
+Псевдоклассы: hover, disabled, ?focus, ?blum
+*****************************
+CSS - каскадные таблицы стилей - отвечает за внешний вид элементов
+Основные селекторы: тег, #, .
+Стили группируются - и формируется таблица - состоит из наборов правила,
+ каждое правило состоит из набора селекторов (и блоков определения).
+
+width - позволяет задать ширину элемента
+height - высота
+margin - расстояние от содержимого элемента до соседних элементов (во все стороны)
+padding- внутренний отступ от рамки компонента
+float - обтекание
+position - положение на экране
+display - режим отображения
+visibility-управление видимостью
+border-задает свойства рамки(границы)
+border-radius-задает округленность рамки
+text-decoration: none, underline     z-index - управление слоями
